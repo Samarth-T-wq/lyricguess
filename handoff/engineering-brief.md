@@ -188,18 +188,27 @@ popular? what's the accuracy curve? do they replay?
 - The listed error states are handled without crashing.
 - Analytics events in §10 fire.
 
+## 11a. Resolved Technical Decisions (from Engineering)
+
+- **Data source:** Free/public APIs rather than Genius for full lyrics.
+  Lyrics.ovh (or similar) for lyric text; MusicBrainz for song/artist metadata.
+- **Caching:** Maintain a small local cached dataset so the game works even if
+  the API is slow or down. Store only the short snippets needed per question —
+  never full lyrics (keeps us in fair-use territory; see §12).
+- **MVP data pipeline:** API → clean/cache data → generate questions from
+  cached snippets.
+  
 ## 12. Open Questions (for engineering to decide)
 
-- **Data source for songs/snippets.** Lyrics are copyrighted and most lyrics
-  APIs have licensing limits. Leading option for MVP: a hand-built JSON dataset
-  (~10+ songs per genre per difficulty, with short snippets + 3 distractors
-  each). Confirm approach and who curates the data.
-- **Tech stack.** Frontend framework, backend language/framework, and hosting —
-  your call. Tell me the frontend framework so the mock shell matches it.
 - **Session model.** Stateful server sessions vs. stateless session token — your
   call; just confirm so the API contract in §8 is right.
 - **Distractor generation.** Hand-authored per song, or generated from the genre
   pool? Affects data authoring effort.
+- **Frontend framework.** Still needed so the mock shell matches — confirm React
+  vs. plain HTML/JS vs. other.
+- **Licensing at scale.** MVP relies on fair-use short snippets only. If we ever
+  go public/commercial, proper lyric licensing is required. Tracked as a future
+  roadmap item, not an MVP blocker.
 
 ---
 
