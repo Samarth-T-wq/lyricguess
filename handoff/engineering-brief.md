@@ -109,7 +109,7 @@ are a proposal — adjust as needed, just tell me so the mock stays in sync.
 **Start a game — request**
 { genre: string, difficulty: "easy" | "medium" | "hard", mode: "song" | "artist" }
 **Start a game — response**
-{ sessionId: string, totalRounds: 10, currentRound: 1, question: <Question> }
+{ sessionId: string, totalRounds: 10, currentRound: 1, question: 'Question' }
 
 **Question object**
 {
@@ -131,7 +131,7 @@ streak: number, // current
 bestStreak: number,
 currentRound: number,
 isComplete: boolean,
-nextQuestion: <Question> | null // null when isComplete
+nextQuestion: 'Question' | null // null when isComplete
 }
 
 **Session results (when isComplete, or via a results fetch)**
