@@ -1,0 +1,32 @@
+[
+  {
+    "genre": "pop",
+    "difficulty": "easy",
+    "artist": "Taylor Swift",
+    "title": "Bad Blood"
+  },
+  {
+    "genre": "pop",
+    "difficulty": "easy",
+    "artist": "Måneskin",
+    "title": "Beggin'"
+  },
+  {
+    "genre": "pop",
+    "difficulty": "easy",
+    "artist": "Taylor Swift",
+    "title": "Lover"
+  },
+  {
+    "genre": "pop",
+    "difficulty": "easy",
+    "artist": "Taylor Swift",
+    "title": "Shake It Off"
+  },
+  {
+    "genre": "pop",
+    "difficulty": "easy",
+    "artist": "Justin Bieber",
+    "title": "Baby"
+  }
+]
