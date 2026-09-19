@@ -345,7 +345,7 @@ function Round({ question, total, scoreState, picked, reveal, onAnswer }) {
 
       <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 20, padding: "34px 24px", margin: "20px 0 24px", minHeight: 150, display: "flex", alignItems: "center", justifyContent: "center", animation: "pop .3s ease" }}>
         <p style={{ fontSize: 24, lineHeight: 1.35, fontWeight: 500, textAlign: "center", margin: 0 }}>
-          “{question.snippet}”
+          "{question.snippet}"
         </p>
       </div>
 
