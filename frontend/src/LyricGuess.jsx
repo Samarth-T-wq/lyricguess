@@ -1,77 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-
-/* ============================================================================
-   LyricGuess — Frontend Shell (mock backend)
-
-   The entire "backend" lives behind the `api` object below. It mimics the
-   contract in /handoff/engineering-brief.md §7–§8. When Garv's real backend
-   exists, replace the bodies of api.startGame / api.submitAnswer with real
-   fetch() calls — the UI never has to change.
-
-   Mock data is short lyric snippets only (fair-use), matching the data plan
-   in brief §11a. Correct answer is NOT exposed to the question payload; the
-   mock resolves correctness internally, exactly like the real server will.
-   ============================================================================ */
-
-// ---- MOCK DATA -------------------------------------------------------------
-// A tiny seed set. Real version: sourced via Lyrics.ovh + MusicBrainz, cached.
-// Each song: short snippet + correct song/artist + 3 distractors per mode.
-const SONGS = {
-  pop: {
-    easy: [
-      { snippet: "'Cause baby now we got bad blood", song: "Bad Blood", artist: "Taylor Swift",
-        songDistractors: ["Blank Space", "Shake It Off", "Style"], artistDistractors: ["Katy Perry", "Selena Gomez", "Ariana Grande"] },
-      { snippet: "I'm beggin', beggin' you to put your loving hand", song: "Beggin'", artist: "Måneskin",
-        songDistractors: ["Believer", "Radioactive", "Thunder"], artistDistractors: ["Imagine Dragons", "The Killers", "OneRepublic"] },
-      { snippet: "We could leave the Christmas lights up till January", song: "Lover", artist: "Taylor Swift",
-        songDistractors: ["Cardigan", "Willow", "Delicate"], artistDistractors: ["Lorde", "Halsey", "Billie Eilish"] },
-      { snippet: "I stay out too late, got nothing in my brain", song: "Shake It Off", artist: "Taylor Swift",
-        songDistractors: ["22", "ME!", "Lover"], artistDistractors: ["Meghan Trainor", "Kesha", "Dua Lipa"] },
-      { snippet: "You know you love me, I know you care", song: "Baby", artist: "Justin Bieber",
-        songDistractors: ["Sorry", "Peaches", "Ghost"], artistDistractors: ["Shawn Mendes", "Charlie Puth", "Nick Jonas"] },
-    ],
-  },
-  hiphop: {
-    easy: [
-      { snippet: "Started from the bottom now we're here", song: "Started From the Bottom", artist: "Drake",
-        songDistractors: ["Hotline Bling", "God's Plan", "One Dance"], artistDistractors: ["J. Cole", "Future", "Travis Scott"] },
-      { snippet: "Yeah, break down these walls for me", song: "SICKO MODE", artist: "Travis Scott",
-        songDistractors: ["Goosebumps", "Antidote", "Highest in the Room"], artistDistractors: ["Drake", "Kanye West", "Lil Uzi Vert"] },
-      { snippet: "They gon' see me either way, ayy", song: "HUMBLE.", artist: "Kendrick Lamar",
-        songDistractors: ["DNA.", "Alright", "Money Trees"], artistDistractors: ["J. Cole", "Big Sean", "Vince Staples"] },
-    ],
-  },
-  rnb: {
-    easy: [
-      { snippet: "I can't feel my face when I'm with you", song: "Can't Feel My Face", artist: "The Weeknd",
-        songDistractors: ["Blinding Lights", "Starboy", "The Hills"], artistDistractors: ["Bruno Mars", "Frank Ocean", "Miguel"] },
-      { snippet: "'Cause you make me feel like I've been locked out of heaven", song: "Locked Out of Heaven", artist: "Bruno Mars",
-        songDistractors: ["24K Magic", "Treasure", "That's What I Like"], artistDistractors: ["The Weeknd", "Usher", "Chris Brown"] },
-      { snippet: "We found love in a hopeless place", song: "We Found Love", artist: "Rihanna",
-        songDistractors: ["Diamonds", "Umbrella", "Work"], artistDistractors: ["Beyoncé", "SZA", "Alicia Keys"] },
-    ],
-  },
-  rock: {
-    easy: [
-      { snippet: "Is this the real life? Is this just fantasy?", song: "Bohemian Rhapsody", artist: "Queen",
-        songDistractors: ["We Will Rock You", "Somebody to Love", "Don't Stop Me Now"], artistDistractors: ["The Beatles", "Led Zeppelin", "The Rolling Stones"] },
-      { snippet: "'Cause I'm still standing better than I ever did", song: "I'm Still Standing", artist: "Elton John",
-        songDistractors: ["Rocket Man", "Tiny Dancer", "Your Song"], artistDistractors: ["Billy Joel", "David Bowie", "Rod Stewart"] },
-      { snippet: "Take it easy, take it easy, don't let the sound of your own wheels", song: "Take It Easy", artist: "Eagles",
-        songDistractors: ["Hotel California", "Desperado", "Life in the Fast Lane"], artistDistractors: ["Fleetwood Mac", "The Doobie Brothers", "America"] },
-    ],
-  },
-  country: {
-    easy: [
-      { snippet: "'Cause I'm leaving on that midnight train to Georgia", song: "Midnight Train to Georgia", artist: "Gladys Knight",
-        songDistractors: ["Jolene", "Ring of Fire", "Wagon Wheel"], artistDistractors: ["Dolly Parton", "Patsy Cline", "Reba McEntire"] },
-      { snippet: "You had me at hello, I was gone the moment that", song: "Gone", artist: "Blake Shelton",
-        songDistractors: ["God's Country", "Honey Bee", "Austin"], artistDistractors: ["Luke Bryan", "Jason Aldean", "Tim McGraw"] },
-      { snippet: "Blame it all on my roots, I showed up in boots", song: "Friends in Low Places", artist: "Garth Brooks",
-        songDistractors: ["The Dance", "The Thunder Rolls", "Callin' Baton Rouge"], artistDistractors: ["George Strait", "Alan Jackson", "Kenny Chesney"] },
-    ],
-  },
-};
+import React, { useState, useRef } from "react";
 
 const GENRES = [
   { id: "pop", label: "Pop" },
@@ -89,91 +16,26 @@ const MODES = [
   { id: "song", label: "Guess the Song" },
   { id: "artist", label: "Guess the Artist" },
 ];
-const POINTS = { easy: 10, medium: 20, hard: 30 };
-const TOTAL_ROUNDS = 10;
-
-// ---- MOCK API (the clean interface Garv's backend will replace) ------------
-function shuffle(a) {
-  const arr = [...a];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-// In-memory "server state", keyed by sessionId. Real backend owns this instead.
-const sessions = {};
 
 const api = {
-  // POST /start  — brief §8
   async startGame({ genre, difficulty, mode }) {
-    await delay();
-    const pool = SONGS[genre]?.[difficulty];
-    // Edge state: insufficient songs (brief §9) — surfaced at start, not mid-game.
-    if (!pool || pool.length < 1) {
-      return { error: "INSUFFICIENT_SONGS" };
-    }
-    const order = shuffle(pool).slice(0, Math.min(TOTAL_ROUNDS, pool.length));
-    const sessionId = "sess_" + Math.random().toString(36).slice(2, 9);
-    sessions[sessionId] = {
-      genre, difficulty, mode, order, round: 0,
-      score: 0, streak: 0, bestStreak: 0, correctCount: 0, answered: {},
-    };
-    return { sessionId, totalRounds: order.length, currentRound: 1, question: buildQuestion(sessionId, 0) };
+    const res = await fetch("/api/session/start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ genre, difficulty, mode }),
+    });
+    return res.json();
   },
 
-  // POST /answer — brief §8
   async submitAnswer({ sessionId, questionId, choiceId }) {
-    await delay();
-    const s = sessions[sessionId];
-    if (!s) return { error: "SESSION_EXPIRED" };
-    // Duplicate submission guard (brief §9): first answer is authoritative.
-    if (s.answered[questionId]) return s.answered[questionId];
-
-    const idx = s.round;
-    const item = s.order[idx];
-    const correctLabel = s.mode === "song" ? item.song : item.artist;
-    const correct = choiceId === correctLabel;
-
-    if (correct) {
-      s.score += POINTS[s.difficulty];
-      s.streak += 1;
-      s.correctCount += 1;
-      s.bestStreak = Math.max(s.bestStreak, s.streak);
-    } else {
-      s.streak = 0;
-    }
-    s.round += 1;
-    const isComplete = s.round >= s.order.length;
-    const result = {
-      correct, correctChoiceId: correctLabel,
-      score: s.score, streak: s.streak, bestStreak: s.bestStreak,
-      currentRound: s.round + 1, isComplete,
-      nextQuestion: isComplete ? null : buildQuestion(sessionId, s.round),
-      results: isComplete ? {
-        sessionId, finalScore: s.score, correctCount: s.correctCount,
-        totalRounds: s.order.length, accuracy: s.correctCount / s.order.length,
-        bestStreak: s.bestStreak,
-      } : null,
-    };
-    s.answered[questionId] = result;
-    return result;
+    const res = await fetch("/api/session/answer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId, questionId, choiceId }),
+    });
+    return res.json();
   },
 };
-
-function buildQuestion(sessionId, roundIdx) {
-  const s = sessions[sessionId];
-  const item = s.order[roundIdx];
-  const correct = s.mode === "song" ? item.song : item.artist;
-  const distractors = s.mode === "song" ? item.songDistractors : item.artistDistractors;
-  const choices = shuffle([correct, ...distractors]).map((label) => ({ choiceId: label, label }));
-  // NOTE: no `correct` field shipped — matches brief §7.3.
-  return { questionId: `${sessionId}_q${roundIdx}`, round: roundIdx + 1, snippet: item.snippet, choices };
-}
-
-// Simulate network latency so loading/feedback timing feels real.
-function delay(ms = 260) { return new Promise((r) => setTimeout(r, ms)); }
 
 // ---- ANALYTICS (mock — brief §10) ------------------------------------------
 function track(event, props = {}) {
