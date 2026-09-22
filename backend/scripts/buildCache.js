@@ -1,10 +1,12 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { fetchLyrics } from "../src/clients/lyricsOvh.js";
 import { lookupArtist } from "../src/clients/musicbrainz.js";
 
-const SEED_PATH = path.join(import.meta.url, "../../data/seed-songs.json").replace("file://", "");
-const CACHE_PATH = path.join(import.meta.url, "../../data/cache/songs.json").replace("file://", "");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SEED_PATH = path.join(__dirname, "../data/seed-songs.json");
+const CACHE_PATH = path.join(__dirname, "../data/cache/songs.json");
 
 function extractSnippet(lyrics, difficulty) {
   const lines = lyrics.split("\n").filter((l) => l.trim());
@@ -58,6 +60,7 @@ async function buildCache() {
   }
 
   // Write cache
+  fs.mkdirSync(path.dirname(CACHE_PATH), { recursive: true });
   fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
 
   console.log(`\n✅ Cache built: ${success} songs, ${failed} failed`);

@@ -1,12 +1,13 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 let songCache = null;
 
 export function loadSongs() {
   if (songCache) return songCache;
 
-  const cacheFile = path.join(import.meta.url, "../../data/cache/songs.json").replace("file://", "");
+  const cacheFile = path.join(path.dirname(fileURLToPath(import.meta.url)), "../../data/cache/songs.json");
 
   try {
     const data = JSON.parse(fs.readFileSync(cacheFile, "utf-8"));

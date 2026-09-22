@@ -1,0 +1,762 @@
+{
+  "pop": {
+    "easy": [
+      {
+        "song": "Blinding Lights",
+        "artist": "The Weeknd",
+        "snippet": "I can't see clearly when you're gone I said: Ooh, I'm blinded by the lights"
+      },
+      {
+        "song": "Shape of You",
+        "artist": "Ed Sheeran",
+        "snippet": "I'm in love with your body (Ohiohiohiohi) I'm in love with your body"
+      },
+      {
+        "song": "bad guy",
+        "artist": "Billie Eilish",
+        "snippet": "Make your girlfriend mad type Might seduce your dad type"
+      },
+      {
+        "song": "Levitating",
+        "artist": "Dua Lipa",
+        "snippet": "Glitter in the sky, glitter in our eyes Shining just the way we are"
+      },
+      {
+        "song": "As It Was",
+        "artist": "Harry Styles",
+        "snippet": "In this world, it's just us You know it's not the same as it was"
+      },
+      {
+        "song": "Flowers",
+        "artist": "Miley Cyrus",
+        "snippet": "Can love me better, I can love me better, baby Can love me better, I can love me better, baby"
+      },
+      {
+        "song": "drivers license",
+        "artist": "Olivia Rodrigo",
+        "snippet": "How you could be so okay now that I'm gone Guess you didn't mean what you wrote in that song about me"
+      },
+      {
+        "song": "Anti-Hero",
+        "artist": "Taylor Swift",
+        "snippet": "It's me, hi, I'm the problem, it's me At teatime, everybody agrees"
+      },
+      {
+        "song": "Watermelon Sugar",
+        "artist": "Harry Styles",
+        "snippet": "Strawberries on a summer evenin' Baby, you're the end of June"
+      },
+      {
+        "song": "New Rules",
+        "artist": "Dua Lipa",
+        "snippet": "I've got new rules, I count 'em I've gotta tell them to myself"
+      }
+    ],
+    "medium": [
+      {
+        "song": "Save Your Tears",
+        "artist": "The Weeknd",
+        "snippet": "But you walked past me like I wasn't there"
+      },
+      {
+        "song": "Circles",
+        "artist": "Post Malone",
+        "snippet": "I'm waiting on you again, so I don't take the blame"
+      },
+      {
+        "song": "positions",
+        "artist": "Ariana Grande",
+        "snippet": "Now, I’m runnin' with you (With you)"
+      },
+      {
+        "song": "good 4 u",
+        "artist": "Olivia Rodrigo",
+        "snippet": "But I guess good for you"
+      },
+      {
+        "song": "Heat Waves",
+        "artist": "Glass Animals",
+        "snippet": "In Hollywood, layin' on the screen"
+      },
+      {
+        "song": "willow",
+        "artist": "Taylor Swift",
+        "snippet": "I'm begging for you to take my hand"
+      },
+      {
+        "song": "greedy",
+        "artist": "Tate McRae",
+        "snippet": "Ooh-ooh, end well"
+      },
+      {
+        "song": "thank u, next",
+        "artist": "Ariana Grande",
+        "snippet": "Spend more time with my friends"
+      },
+      {
+        "song": "Someone You Loved",
+        "artist": "Lewis Capaldi",
+        "snippet": "I was getting kinda used to being someone you loved"
+      },
+      {
+        "song": "Treat You Better",
+        "artist": "Shawn Mendes",
+        "snippet": "When you should be with me instead"
+      }
+    ],
+    "hard": [
+      {
+        "song": "traitor",
+        "artist": "Olivia Rodrigo",
+        "snippet": "To go off and date her"
+      },
+      {
+        "song": "Adore You",
+        "artist": "Harry Styles",
+        "snippet": "Brown skin and lemon over ice"
+      },
+      {
+        "song": "Ghost",
+        "artist": "Justin Bieber",
+        "snippet": "Your memory is ecstasy"
+      },
+      {
+        "song": "cardigan",
+        "artist": "Taylor Swift",
+        "snippet": "Chase two girls, lose the one"
+      },
+      {
+        "song": "Physical",
+        "artist": "Dua Lipa",
+        "snippet": "Let's get physical"
+      },
+      {
+        "song": "Green Light",
+        "artist": "Lorde",
+        "snippet": "But honey I'll be seein' you down every road"
+      },
+      {
+        "song": "Without Me",
+        "artist": "Halsey",
+        "snippet": "Thinking you could live without me"
+      },
+      {
+        "song": "Heather",
+        "artist": "Conan Gray",
+        "snippet": "You gave her your sweater, it's just polyester"
+      },
+      {
+        "song": "Nonsense",
+        "artist": "Sabrina Carpenter",
+        "snippet": "And when you got your arms around me, ooh, it feel so good"
+      },
+      {
+        "song": "Youth",
+        "artist": "Troye Sivan",
+        "snippet": "My youth, my youth is yours"
+      }
+    ]
+  },
+  "hiphop": {
+    "easy": [
+      {
+        "song": "HUMBLE",
+        "artist": "Kendrick Lamar",
+        "snippet": "(Hol' up, bitch) sit down (Hol' up lil' bitch, hol' up lil' bitch) be humble"
+      },
+      {
+        "song": "rockstar",
+        "artist": "Post Malone",
+        "snippet": "Dude, your girlfriend is a groupie, she just tryna get in Sayin', \"I'm with the band\""
+      },
+      {
+        "song": "SICKO MODE",
+        "artist": "Travis Scott",
+        "snippet": "Told her \"hop in, you comin' too\" In the 305, bitches treat me like I'm Uncle Luke (don't stop, pop that pussy)"
+      },
+      {
+        "song": "Bodak Yellow",
+        "artist": "Cardi B",
+        "snippet": "I don't bother with these hoes, don't let these hoes bother me They see pictures, they say, \"Goals,\" bitch, I'm who they tryna be"
+      },
+      {
+        "song": "Old Town Road",
+        "artist": "Lil Nas X",
+        "snippet": "You can whip your Porsche I been in the valley"
+      },
+      {
+        "song": "Savage",
+        "artist": "Megan Thee Stallion",
+        "snippet": "Acting stupid, what's happening? (Woah, woah) Bitch, what's happening? (Woah, woah)"
+      },
+      {
+        "song": "The Box",
+        "artist": "Roddy Ricch",
+        "snippet": "Lotta niggas out here playin' ain't ballin' I done put my whole arm in the rim, Vince Carter (Yeah)"
+      },
+      {
+        "song": "Life Is Good",
+        "artist": "Future",
+        "snippet": "Way off in the deep end like usual (Like usual) Niggas swear they passed us, they doin' too much"
+      },
+      {
+        "song": "Godzilla",
+        "artist": "Eminem",
+        "snippet": "Tryna see, will I still be like this tomorrow? Risperdal, voices whisper"
+      },
+      {
+        "song": "First Class",
+        "artist": "Jack Harlow",
+        "snippet": "Pineapple juice, I give her sweet, sweet, sweet semen I know what they like so I just keep cheesin'"
+      }
+    ],
+    "medium": [
+      {
+        "song": "MIDDLE CHILD",
+        "artist": "J. Cole",
+        "snippet": "It won't be for clout, it won't be for fame"
+      },
+      {
+        "song": "Nice For What",
+        "artist": "Drake",
+        "snippet": "Without a follow, without a mention"
+      },
+      {
+        "song": "DNA",
+        "artist": "Kendrick Lamar",
+        "snippet": "See, my pedigree most definitely don't tolerate the front"
+      },
+      {
+        "song": "Body",
+        "artist": "Megan Thee Stallion",
+        "snippet": "All them bitches scary cats, I call 'em Carole Baskins, ah"
+      },
+      {
+        "song": "Drip Too Hard",
+        "artist": "Lil Baby",
+        "snippet": "Bad lil' vibe, she been on my mind"
+      },
+      {
+        "song": "a lot",
+        "artist": "21 Savage",
+        "snippet": "My brother lost his life and it turned me to a beast"
+      },
+      {
+        "song": "family ties",
+        "artist": "Baby Keem",
+        "snippet": "I netted ten million and did a lil' dance"
+      },
+      {
+        "song": "XO Tour Llif3",
+        "artist": "Lil Uzi Vert",
+        "snippet": "My Brittany got mad"
+      }
+    ],
+    "hard": [
+      {
+        "song": "No Role Modelz",
+        "artist": "J. Cole",
+        "snippet": "But then I thought back, back to a better me"
+      },
+      {
+        "song": "Money Trees",
+        "artist": "Kendrick Lamar",
+        "snippet": "Another casualty of war, ya bish"
+      },
+      {
+        "song": "Passionfruit",
+        "artist": "Drake",
+        "snippet": "Between us just like picket fences"
+      },
+      {
+        "song": "HIGHEST IN THE ROOM",
+        "artist": "Travis Scott",
+        "snippet": "You say you love me, don't you lie (Yeah)"
+      },
+      {
+        "song": "See You Again",
+        "artist": "Tyler, The Creator",
+        "snippet": "Can I get a kiss?"
+      },
+      {
+        "song": "RICKY",
+        "artist": "Denzel Curry",
+        "snippet": "And fear no man, but the man above your head\""
+      },
+      {
+        "song": "Surround Sound",
+        "artist": "JID",
+        "snippet": "400 racks ain’t shit but a show to me"
+      },
+      {
+        "song": "Sky",
+        "artist": "Playboi Carti",
+        "snippet": "Pour up some lean and get stuck (Pour it up)"
+      },
+      {
+        "song": "Self Care",
+        "artist": "Mac Miller",
+        "snippet": "You can find me, I ain't hiding"
+      },
+      {
+        "song": "Free Lunch",
+        "artist": "Isaiah Rashad",
+        "snippet": "All my hoes be nines and dimes, all she want is chicken grease"
+      },
+      {
+        "song": "Norf Norf",
+        "artist": "Vince Staples",
+        "snippet": "From the city where the skinny carry strong heat"
+      }
+    ]
+  },
+  "rnb": {
+    "easy": [
+      {
+        "song": "Kill Bill",
+        "artist": "SZA",
+        "snippet": "I get the sense that you might really love her This text gon' be evidence"
+      },
+      {
+        "song": "Work",
+        "artist": "Rihanna",
+        "snippet": "Work, work, work, work, work, work He said me haffi"
+      },
+      {
+        "song": "Streets",
+        "artist": "Doja Cat",
+        "snippet": "And acted like I was okay We just had to work it out"
+      },
+      {
+        "song": "Under the Influence",
+        "artist": "Chris Brown",
+        "snippet": "You don't know what you did, did to me Your body lightweight, speaks to me"
+      },
+      {
+        "song": "Girls Need Love",
+        "artist": "Summer Walker",
+        "snippet": "We could start with a handshake baby Imma need more than a hug"
+      },
+      {
+        "song": "Get You",
+        "artist": "Daniel Caesar",
+        "snippet": "It's only the two of us Everything I need's between those thighs"
+      },
+      {
+        "song": "Bad Habit",
+        "artist": "Steve Lacy",
+        "snippet": "If you still wanna I wish you wouldn't play with me"
+      }
+    ],
+    "medium": [
+      {
+        "song": "Good Days",
+        "artist": "SZA",
+        "snippet": "While the world break up and fall on me"
+      },
+      {
+        "song": "Better",
+        "artist": "Khalid",
+        "snippet": "All I hear is"
+      },
+      {
+        "song": "Heartbreak Anniversary",
+        "artist": "Giveon",
+        "snippet": "I, get like this every time"
+      },
+      {
+        "song": "No Guidance",
+        "artist": "Chris Brown",
+        "snippet": "No nine to five, put the work in"
+      },
+      {
+        "song": "Nights Like This",
+        "artist": "Kehlani",
+        "snippet": "All them times I played the fool for you"
+      },
+      {
+        "song": "Trust",
+        "artist": "Brent Faiyaz",
+        "snippet": "Sometimes"
+      },
+      {
+        "song": "Come Thru",
+        "artist": "Summer Walker",
+        "snippet": "You make me wanna come through"
+      },
+      {
+        "song": "Best Part",
+        "artist": "Daniel Caesar",
+        "snippet": "Where you go I follow"
+      }
+    ],
+    "hard": [
+      {
+        "song": "Ivy",
+        "artist": "Frank Ocean",
+        "snippet": "Back then, no matter what I did"
+      },
+      {
+        "song": "Snooze",
+        "artist": "SZA",
+        "snippet": "You just too important"
+      },
+      {
+        "song": "Dead Man Walking",
+        "artist": "Brent Faiyaz",
+        "snippet": "Live, how you wanna"
+      },
+      {
+        "song": "Like I Want You",
+        "artist": "Giveon",
+        "snippet": "Even if it's true, ooh"
+      },
+      {
+        "song": "I Want You Around",
+        "artist": "Snoh Aalegra",
+        "snippet": "I want you around (Around)"
+      },
+      {
+        "song": "PRBLMS",
+        "artist": "6LACK",
+        "snippet": "When I ain't did shit, but be the real thing"
+      },
+      {
+        "song": "Roll Some Mo",
+        "artist": "Lucky Daye",
+        "snippet": "We don't have to be here if we stay"
+      },
+      {
+        "song": "Be Honest",
+        "artist": "Jorja Smith",
+        "snippet": "Take time, you no say I'm wrong whenever I see bad vibes"
+      },
+      {
+        "song": "After the Storm",
+        "artist": "Kali Uchis",
+        "snippet": "Everybody's going through it"
+      }
+    ]
+  },
+  "rock": {
+    "easy": [
+      {
+        "song": "Believer",
+        "artist": "Imagine Dragons",
+        "snippet": "Pain! You break me down, you build me up, believer, believer"
+      },
+      {
+        "song": "Beggin'",
+        "artist": "Måneskin",
+        "snippet": "I'm beggin', beggin' you And put your loving hand out darling"
+      },
+      {
+        "song": "Stressed Out",
+        "artist": "Twenty One Pilots",
+        "snippet": "When our momma sang us to sleep but now we're stressed out Sometimes a certain smell will take me back to when I was young"
+      },
+      {
+        "song": "Thunder",
+        "artist": "Imagine Dragons",
+        "snippet": "Lightning and the thunder Thunder, thunder"
+      },
+      {
+        "song": "High Hopes",
+        "artist": "Panic! At The Disco",
+        "snippet": "Light up your wildest dreams Museum victories, everyday"
+      },
+      {
+        "song": "Sweater Weather",
+        "artist": "The Neighbourhood",
+        "snippet": "Both your hands in the holes of my sweater And if I may just take your breath away"
+      },
+      {
+        "song": "Do I Wanna Know?",
+        "artist": "Arctic Monkeys",
+        "snippet": "Ever thought of calling when you've had a few 'Cause I always do"
+      },
+      {
+        "song": "Heathens",
+        "artist": "Twenty One Pilots",
+        "snippet": "You'll never know the psychopath sitting next to you You'll never know the murderer sitting next to you"
+      },
+      {
+        "song": "I WANNA BE YOUR SLAVE",
+        "artist": "Måneskin",
+        "snippet": "I wanna be a loser I’ll even bе a clown"
+      },
+      {
+        "song": "Centuries",
+        "artist": "Fall Out Boy",
+        "snippet": "And this is supposed to match The darkness that you felt"
+      },
+      {
+        "song": "Cigarette Daydreams",
+        "artist": "Cage The Elephant",
+        "snippet": "You wanna find peace of mind Looking for the answers"
+      }
+    ],
+    "medium": [
+      {
+        "song": "Ride",
+        "artist": "Twenty One Pilots",
+        "snippet": "Metaphorically I'm the man"
+      },
+      {
+        "song": "Hey Look Ma, I Made It",
+        "artist": "Panic! At The Disco",
+        "snippet": "And if you lose, boo-hoo"
+      },
+      {
+        "song": "Daddy Issues",
+        "artist": "The Neighbourhood",
+        "snippet": "So I made with the sun"
+      },
+      {
+        "song": "R U Mine?",
+        "artist": "Arctic Monkeys",
+        "snippet": "Are you mine?"
+      },
+      {
+        "song": "Gooey",
+        "artist": "Glass Animals",
+        "snippet": "My, my simple sir, this ain't gonna work"
+      },
+      {
+        "song": "MAMMAMIA",
+        "artist": "Måneskin",
+        "snippet": "Oh, mamma-mamma mia"
+      },
+      {
+        "song": "Somebody Else",
+        "artist": "The 1975",
+        "snippet": "This ain't the last time that I'll see your face"
+      },
+      {
+        "song": "Highway Tune",
+        "artist": "Greta Van Fleet",
+        "snippet": "You are my special"
+      },
+      {
+        "song": "Run",
+        "artist": "Foo Fighters",
+        "snippet": "You can run with me"
+      },
+      {
+        "song": "Figure It Out",
+        "artist": "Royal Blood",
+        "snippet": "I let it go, 'cause I won't see later on"
+      },
+      {
+        "song": "Tear In My Heart",
+        "artist": "Twenty One Pilots",
+        "snippet": "I'm on fire"
+      }
+    ],
+    "hard": [
+      {
+        "song": "505",
+        "artist": "Arctic Monkeys",
+        "snippet": "I probably still adore you with you hand around my neck,"
+      },
+      {
+        "song": "Chocolate",
+        "artist": "The 1975",
+        "snippet": "If you don't start smoking it, that's what she said"
+      },
+      {
+        "song": "Trouble",
+        "artist": "Cage The Elephant",
+        "snippet": "My sweet love won't you pull me through."
+      },
+      {
+        "song": "Car Radio",
+        "artist": "Twenty One Pilots",
+        "snippet": "I could pull the steering wheel"
+      },
+      {
+        "song": "Softcore",
+        "artist": "The Neighbourhood",
+        "snippet": "I've been confused as of late (yeah)"
+      },
+      {
+        "song": "Amsterdam",
+        "artist": "Nothing But Thieves",
+        "snippet": "Some you say you love"
+      },
+      {
+        "song": "My Name Is Human",
+        "artist": "Highly Suspect",
+        "snippet": "But I'm ready for more"
+      },
+      {
+        "song": "Little Monster",
+        "artist": "Royal Blood",
+        "snippet": "I'm your wolf- I'm your man"
+      },
+      {
+        "song": "When The Curtain Falls",
+        "artist": "Greta Van Fleet",
+        "snippet": "No"
+      },
+      {
+        "song": "Cardiac Arrest",
+        "artist": "Bad Suns",
+        "snippet": "How much do I invest?"
+      }
+    ]
+  },
+  "country": {
+    "easy": [
+      {
+        "song": "Beautiful Crazy",
+        "artist": "Luke Combs",
+        "snippet": "And wears her heart on her sleeve Yeah, she's crazy but her crazy's beautiful to me"
+      },
+      {
+        "song": "Last Night",
+        "artist": "Morgan Wallen",
+        "snippet": "But I'm still gon' wake up wantin' you and me I know that last night we let the liquor talk"
+      },
+      {
+        "song": "Body Like a Back Road",
+        "artist": "Sam Hunt",
+        "snippet": "But I can turn them inside out, I don't need no help Got hips like honey, so thick and so sweet"
+      },
+      {
+        "song": "Tennessee Whiskey",
+        "artist": "Chris Stapleton",
+        "snippet": "And honey, I stay stoned on your love all the time I've looked for love in all the same old places"
+      },
+      {
+        "song": "Hurricane",
+        "artist": "Luke Combs",
+        "snippet": "You wrecked my whole world when you came, and hit me like a hurricane."
+      },
+      {
+        "song": "Whiskey Glasses",
+        "artist": "Morgan Wallen",
+        "snippet": "Yea I'ma need some whiskey glasses If I'm gonna make it through"
+      },
+      {
+        "song": "Heaven",
+        "artist": "Kane Brown",
+        "snippet": "Lying next to you, in this bed with you, I ain't convinced Cause, I don't know how, I don't know how heaven, heaven"
+      },
+      {
+        "song": "Rainbow",
+        "artist": "Kacey Musgraves",
+        "snippet": "That there's always been a rainbow hangin' over your head If you could see what I see, you'd be blinded by the colours"
+      },
+      {
+        "song": "Break Up with Him",
+        "artist": "Old Dominion",
+        "snippet": "Rip it off just like a band-aid The way you look at me, girl, you can't pretend"
+      }
+    ],
+    "medium": [
+      {
+        "song": "When It Rains It Pours",
+        "artist": "Luke Combs",
+        "snippet": "And I ain't gotta see my ex future mother-in-law anymore"
+      },
+      {
+        "song": "Wasted on You",
+        "artist": "Morgan Wallen",
+        "snippet": "You’re gone and I’ve gone 3 sheets to the wind"
+      },
+      {
+        "song": "Heading South",
+        "artist": "Zach Bryan",
+        "snippet": "So don't stop goin', goin' south"
+      },
+      {
+        "song": "Space Cowboy",
+        "artist": "Kacey Musgraves",
+        "snippet": "Yeah, we had our day in the sun"
+      },
+      {
+        "song": "Broken Halos",
+        "artist": "Chris Stapleton",
+        "snippet": "And they find some other soul to save"
+      },
+      {
+        "song": "What Ifs",
+        "artist": "Kane Brown",
+        "snippet": "What if one of these days baby I'd go and change your name"
+      },
+      {
+        "song": "Church Bells",
+        "artist": "Carrie Underwood",
+        "snippet": "And up in the loft, that whole choir singing, singing"
+      },
+      {
+        "song": "Bluebird",
+        "artist": "Miranda Lambert",
+        "snippet": "And if the whole wide world stops singing"
+      },
+      {
+        "song": "Tequila",
+        "artist": "Dan + Shay",
+        "snippet": "I remember how bad I need ya, when I taste tequila"
+      },
+      {
+        "song": "My Church",
+        "artist": "Maren Morris",
+        "snippet": "Yeah I guess that's my church"
+      }
+    ],
+    "hard": [
+      {
+        "song": "Revival",
+        "artist": "Zach Bryan",
+        "snippet": "We're having an all night revival"
+      },
+      {
+        "song": "Slow Burn",
+        "artist": "Kacey Musgraves",
+        "snippet": "I'm gonna do it my way; it'll be alright"
+      },
+      {
+        "song": "Cold",
+        "artist": "Chris Stapleton",
+        "snippet": "What am I supposed to say"
+      },
+      {
+        "song": "Sand in My Boots",
+        "artist": "Morgan Wallen",
+        "snippet": "Like a heart-broke Desperado, heading right back to my roots"
+      },
+      {
+        "song": "Feathered Indians",
+        "artist": "Tyler Childers",
+        "snippet": "Hold me close my dear"
+      },
+      {
+        "song": "One Night Standards",
+        "artist": "Ashley McBryde",
+        "snippet": "Just a room without a view"
+      },
+      {
+        "song": "Long Hot Summer Day",
+        "artist": "Turnpike Troubadours",
+        "snippet": "Forever day I'm workin on the Illinois River,"
+      },
+      {
+        "song": "Turtles All the Way Down",
+        "artist": "Sturgill Simpson",
+        "snippet": "So go and try to have some fun"
+      },
+      {
+        "song": "Welcome to Hard Times",
+        "artist": "Charley Crockett",
+        "snippet": "Well, you will before you go"
+      },
+      {
+        "song": "Loud and Heavy",
+        "artist": "Cody Jinks",
+        "snippet": "Loud thunder heavy rain"
+      }
+    ]
+  }
+}
