@@ -17,9 +17,15 @@ const MODES = [
   { id: "artist", label: "Guess the Artist" },
 ];
 
+// Base URL of the backend API. In production (Vercel) set VITE_API_URL to the
+// Railway URL — the frontend is on a different origin, so requests must be
+// absolute. Left unset in dev, requests stay relative and hit the vite proxy
+// configured in vite.config.js.
+const API_URL = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+
 const api = {
   async startGame({ genre, difficulty, mode }) {
-    const res = await fetch("/api/session/start", {
+    const res = await fetch(`${API_URL}/api/session/start`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ genre, difficulty, mode }),
@@ -28,7 +34,7 @@ const api = {
   },
 
   async submitAnswer({ sessionId, questionId, choiceId }) {
-    const res = await fetch("/api/session/answer", {
+    const res = await fetch(`${API_URL}/api/session/answer`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, questionId, choiceId }),

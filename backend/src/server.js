@@ -5,7 +5,14 @@ import sessionRouter from "./routes/session.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// Allowed browser origin(s). Unset => allow all, so the MVP works as soon as
+// it's deployed; set CORS_ORIGIN to the Vercel URL to lock it down later.
+// Accepts a comma-separated list.
+const CORS_ORIGIN = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim()).filter(Boolean)
+  : "*";
+
+app.use(cors({ origin: CORS_ORIGIN }));
 app.use(express.json());
 
 // Health check endpoint
