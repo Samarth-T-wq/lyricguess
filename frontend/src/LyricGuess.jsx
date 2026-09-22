@@ -17,9 +17,11 @@ const MODES = [
   { id: "artist", label: "Guess the Artist" },
 ];
 
+const API_BASE = import.meta.env.VITE_API_URL || "";
+
 const api = {
   async startGame({ genre, difficulty, mode }) {
-    const res = await fetch("/api/session/start", {
+    const res = await fetch(`${API_BASE}/api/session/start`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ genre, difficulty, mode }),
@@ -28,7 +30,7 @@ const api = {
   },
 
   async submitAnswer({ sessionId, questionId, choiceId }) {
-    const res = await fetch("/api/session/answer", {
+    const res = await fetch(`${API_BASE}/api/session/answer`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, questionId, choiceId }),
