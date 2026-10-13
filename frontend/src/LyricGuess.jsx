@@ -61,9 +61,9 @@ export default function LyricGuess() {
 
   const [session, setSession] = useState(null);
   const [question, setQuestion] = useState(null);
-  const [scoreState, setScoreState] = useState({ score: 0, streak: 0, bestStreak: 0, round: 1 });
+  const [scoreState, setScoreState] = useState({ score: 0, streak: 0, bestStreak: 0, multiplier: 1, round: 1 });
   const [picked, setPicked] = useState(null);
-  const [reveal, setReveal] = useState(null); // { correct, correctChoiceId }
+  const [reveal, setReveal] = useState(null); // { correct, correctChoiceId, pointsAwarded }
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [results, setResults] = useState(null);
@@ -72,7 +72,7 @@ export default function LyricGuess() {
   function reset() {
     setGenre(null); setDifficulty(null); setMode(null);
     setSession(null); setQuestion(null); setPicked(null); setReveal(null);
-    setResults(null); setScoreState({ score: 0, streak: 0, bestStreak: 0, round: 1 });
+    setResults(null); setScoreState({ score: 0, streak: 0, bestStreak: 0, multiplier: 1, round: 1 });
   }
 
   async function begin(g, d, m) {
@@ -87,7 +87,7 @@ export default function LyricGuess() {
     }
     setSession({ id: res.sessionId, total: res.totalRounds });
     setQuestion(res.question);
-    setScoreState({ score: 0, streak: 0, bestStreak: 0, round: 1 });
+    setScoreState({ score: 0, streak: 0, bestStreak: 0, multiplier: res.multiplier ?? 1, round: 1 });
     setScreen("round");
     track("question_shown", { round: 1, difficulty: d });
   }
@@ -102,8 +102,8 @@ export default function LyricGuess() {
       setScreen("error"); lockRef.current = false; return;
     }
     track("answer_submitted", { correct: res.correct, round: scoreState.round, streak: res.streak });
-    setReveal({ correct: res.correct, correctChoiceId: res.correctChoiceId });
-    setScoreState((s) => ({ ...s, score: res.score, streak: res.streak, bestStreak: res.bestStreak }));
+    setReveal({ correct: res.correct, correctChoiceId: res.correctChoiceId, pointsAwarded: res.pointsAwarded });
+    setScoreState((s) => ({ ...s, score: res.score, streak: res.streak, bestStreak: res.bestStreak, multiplier: res.multiplier ?? 1 }));
 
     setTimeout(() => {
       if (res.isComplete) {
@@ -200,8 +200,10 @@ function Round({ question, total, scoreState, picked, reveal, onAnswer }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 22 }}>
         <span style={{ color: C.sub, fontSize: 14, fontWeight: 500 }}>Round {scoreState.round} / {total}</span>
         <div style={{ display: "flex", gap: 16 }}>
-          <Stat label="Score" value={scoreState.score} />
-          <Stat label="Streak" value={scoreState.streak} flame streak={scoreState.streak} />
+          <Stat label="Score" value={scoreState.score}
+            gain={reveal?.correct && reveal.pointsAwarded > 0 ? reveal.pointsAwarded : null} />
+          <Stat label="Streak" value={scoreState.streak} flame streak={scoreState.streak}
+            multiplier={scoreState.multiplier} />
         </div>
       </div>
 
@@ -261,14 +263,29 @@ function ErrorState({ msg, onBack }) {
 }
 
 // ---- small components ------------------------------------------------------
-function Stat({ label, value, flame, streak }) {
+function Stat({ label, value, flame, streak, multiplier, gain }) {
   return (
     <div style={{ textAlign: "right" }}>
       <div style={{ fontSize: 11, color: C.sub, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
-      <div key={value} style={{ fontSize: 20, fontWeight: 700, animation: flame && streak > 0 ? "streakpulse .4s ease" : "none" }}>
-        {flame && streak > 0 ? `🔥${value}` : value}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 6 }}>
+        {gain != null && (
+          <span style={{ fontSize: 13, fontWeight: 700, color: C.good, animation: "pop .3s ease" }}>+{gain}</span>
+        )}
+        <div key={value} style={{ fontSize: 20, fontWeight: 700, animation: flame && streak > 0 ? "streakpulse .4s ease" : "none" }}>
+          {flame && streak > 0 ? `🔥${value}` : value}
+        </div>
+        {multiplier > 1 && <MultiplierBadge value={multiplier} />}
       </div>
     </div>
+  );
+}
+function MultiplierBadge({ value }) {
+  return (
+    <span key={value} title="Points multiplier for your next correct answer"
+      style={{ fontSize: 12, fontWeight: 700, color: "#fff", padding: "2px 7px", borderRadius: 99,
+        background: `linear-gradient(90deg, ${C.accent2}, ${C.accent})`, animation: "streakpulse .4s ease" }}>
+      x{value}
+    </span>
   );
 }
 function ProgressBar({ current, total }) {
