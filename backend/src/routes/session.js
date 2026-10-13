@@ -1,10 +1,9 @@
 import express from "express";
 import { createSession, getSession, updateSession } from "../services/sessionStore.js";
 import { buildQuestion } from "../services/questionBuilder.js";
+import { pointsFor, streakMultiplier } from "../services/scoring.js";
 
 const router = express.Router();
-
-const POINTS = { easy: 10, medium: 20, hard: 30 };
 
 // POST /api/session/start
 router.post("/start", (req, res) => {
@@ -27,6 +26,7 @@ router.post("/start", (req, res) => {
     sessionId,
     totalRounds: session.order.length,
     currentRound: 1,
+    multiplier: streakMultiplier(session.streak),
     question
   });
 });
@@ -50,8 +50,12 @@ router.post("/answer", (req, res) => {
   const correctLabel = session.mode === "song" ? item.song : item.artist;
   const correct = choiceId === correctLabel;
 
+  // Multiplier is read from the streak BEFORE this answer increments it
+  const multiplierApplied = correct ? streakMultiplier(session.streak) : 0;
+  const pointsAwarded = correct ? pointsFor(session.difficulty, session.streak) : 0;
+
   if (correct) {
-    session.score += POINTS[session.difficulty];
+    session.score += pointsAwarded;
     session.streak += 1;
     session.correctCount += 1;
     session.bestStreak = Math.max(session.bestStreak, session.streak);
@@ -68,6 +72,9 @@ router.post("/answer", (req, res) => {
     score: session.score,
     streak: session.streak,
     bestStreak: session.bestStreak,
+    pointsAwarded,
+    multiplierApplied,
+    multiplier: streakMultiplier(session.streak),
     currentRound: session.round + 1,
     isComplete,
     nextQuestion: isComplete ? null : buildQuestion(sessionId, session.round, session.order[session.round], session.genre, session.difficulty, session.mode),
